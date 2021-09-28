@@ -49,5 +49,5 @@ DataSet$activity <- ActData
 DataSet2 <- melt(DataSet,(id.vars=c("subject","activity")))
 FinalData <- dcast(DataSet2, subject + activity ~ variable, mean)
 names(FinalData)[-c(1:2)] <- paste(names(FinalData)[-c(1:2)] )
-write.table(FinalData, "TidyData.txt", sep = ",")
+write.table(FinalData, "TidyData.txt", sep = ",", row.names = FALSE)
 
